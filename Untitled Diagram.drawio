@@ -1,9 +1,69 @@
-<mxfile host="app.diagrams.net" modified="2023-06-19T11:24:41.135Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" version="21.5.0" etag="E7EORQuV4s-ebDgxxVG1" type="github">
+<mxfile host="app.diagrams.net" modified="2023-06-19T12:00:43.610Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="dlgjI-L9i70t-rgZ_9EW" version="21.5.0" type="github">
   <diagram name="Page-1" id="EnKb-vX4OPr-WMIfsARK">
-    <mxGraphModel>
+    <mxGraphModel dx="432" dy="477" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="g5O0_l2DVpQhYws2blWu-1" value="Admin" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="20" y="270" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="g5O0_l2DVpQhYws2blWu-2" value="Customer" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="730" y="260" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="g5O0_l2DVpQhYws2blWu-6" value="Dashboard" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="150" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="g5O0_l2DVpQhYws2blWu-8" value="Customer Info" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="200" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="g5O0_l2DVpQhYws2blWu-9" value="Task" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="260" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="g5O0_l2DVpQhYws2blWu-10" value="Task details" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="310" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="g5O0_l2DVpQhYws2blWu-11" value="Cost" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="370" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="g5O0_l2DVpQhYws2blWu-12" value="Cost details" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="420" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="g5O0_l2DVpQhYws2blWu-13" value="database" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="470" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="g5O0_l2DVpQhYws2blWu-15" value="Add Mechanics" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="150" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="g5O0_l2DVpQhYws2blWu-16" value="Login" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="100" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="g5O0_l2DVpQhYws2blWu-18" value="Handle booking" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="210" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="g5O0_l2DVpQhYws2blWu-19" value="Generate Invoice" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="320" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="g5O0_l2DVpQhYws2blWu-20" value="Generate Schedule" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="270" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="g5O0_l2DVpQhYws2blWu-21" value="Select service" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="190" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="g5O0_l2DVpQhYws2blWu-22" value="Register" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="70" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="g5O0_l2DVpQhYws2blWu-23" value="Login" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="110" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="g5O0_l2DVpQhYws2blWu-24" value="Add Delete Viechles" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="150" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="g5O0_l2DVpQhYws2blWu-25" value="Booking" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="240" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="g5O0_l2DVpQhYws2blWu-26" value="View Invoice?" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="300" width="120" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
