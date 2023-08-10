@@ -98,11 +98,11 @@
                                 <tbody>
                                     <tr>
                                         
-                                    <%
+                                    <%                                              //filter name
                                         String startDateParam = request.getParameter("startDate");
                                         String endDateParam = request.getParameter("endDate"); 
                                         
-                                       
+                                       // get data connection
                                         BookingDao dao = new BookingDao(SQLconnect.getConn());
                                         MechanicDao mdao = new MechanicDao(SQLconnect.getConn());
                                         CustomerDao cdao = new CustomerDao(SQLconnect.getConn());
@@ -137,7 +137,7 @@
                                             <% } %>
                                         </td>
                                         
-                                        <!--  set id:1 booking status = new booking-->
+                                        <!--  set id:1 = booking status = New to standout-->
                                         <td>
                                             <% if (b.getStatusId() == 1) { %>
                                                 <a href="#" class="btn btn-sm btn-warning">New</a>

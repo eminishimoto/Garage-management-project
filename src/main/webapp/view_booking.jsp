@@ -9,6 +9,7 @@
 <%@page import="com.entity.Type"%>
 <%@page import="com.entity.Vehicle"%>
 <%@page import="com.entity.Service"%>
+<%@page import="com.entity.Status"%>
 <%@page import="java.util.List"%>
 <%@page import="com.db.gersgarage.SQLconnect"%>
 <%@page import="com.dao.BookingDao"%>
@@ -18,6 +19,7 @@
 <%@page import="com.dao.TypeDao"%>
 <%@page import="com.dao.VehicleDao"%>
 <%@page import="com.dao.ServiceDao"%>
+<%@page import="com.dao.StatusDao"%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -117,7 +119,13 @@
                                             if (b.getStatusId() == 1) { %>
                                             <a href="#" class="btn btn-sm btn-warning">Booked</a>
                                             <%} else {%>
-                                            <%= b.getStatusId()%>
+                                            
+                                                                                    <%
+                                        // As　
+                                        StatusDao stDao = new StatusDao(SQLconnect.getConn());
+                                        Status st = stDao.getStatusById(b.getStatusId());
+                                        %>
+                                            <%= st.getStatus()%>
                                             <%
                                                 }
                                             %> </td>
