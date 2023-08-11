@@ -41,7 +41,7 @@
 					<div class="card-body text-center text-success">
 						<i class="fas fa-user-md fa-3x"></i><br>
 						<p class="fs-4 text-center">
-							Doctor <br>12
+							Mechanic <br>12
                                                        
 						</p>
 					</div>

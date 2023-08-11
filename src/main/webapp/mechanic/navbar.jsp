@@ -20,7 +20,7 @@
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <a href="navbar.jsp"></a>
                                 <!--   clicking leads each page-->
-				<li class="nav-item"><a class="nav-link active " href="home.jsp">HOME</a></li>
+				<li class="nav-item"><a class="nav-link active " href="index.jsp">HOME</a></li>
 				<li class="nav-item"><a class="nav-link active" href="assigned_booking.jsp">Assigned Booking</a></li>
 
 
@@ -35,7 +35,8 @@
                                                 aria-expanded="false"><i class="fas fa-user-circle"></i>${mechanicObj.fName}
                                         </button>
 					<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-						<li><a class="dropdown-item" href="profile.jsp">Edit Profile</a></li>
+						<li><a class="dropdown-item" href="">Edit Profile</a></li>
+                                                                        <!--      servlet link-->
                                                 <li><a class="dropdown-item" href="../mechanicLogout">Logout</a></li>
                                         </ul>
 				</div>

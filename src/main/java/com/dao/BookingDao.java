@@ -155,7 +155,7 @@ public class BookingDao {
 	
             Booking b = null;
 		try {
-			String sql = "select * from booking where id=?";
+			String sql = "select * from booking where id=? ";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, id);
 

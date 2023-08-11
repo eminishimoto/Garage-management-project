@@ -116,19 +116,12 @@
 
                                         <td>
                                             <%
-                                            if (b.getStatusId() == 1) { %>
-                                            <a href="#" class="btn btn-sm btn-warning">Booked</a>
-                                            <%} else {%>
-                                            
-                                                                                    <%
-                                        // As　
-                                        StatusDao stDao = new StatusDao(SQLconnect.getConn());
-                                        Status st = stDao.getStatusById(b.getStatusId());
-                                        %>
-                                            <%= st.getStatus()%>
-                                            <%
-                                                }
-                                            %> </td>
+                                            StatusDao stDao = new StatusDao(SQLconnect.getConn());
+                                            Status st = stDao.getStatusById(b.getStatusId());
+                                            %>
+                                            <a href="#" class="btn btn-sm btn-warning"> 
+                                            <%= st.getStatus()%></a>
+                                        </td>
 
 
                                     </tr>
