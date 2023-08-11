@@ -118,7 +118,7 @@ box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 									List<Status> list2 = dao2.getAllStatus();
 									for (Status st : list2) {
 									%>
-									<option value="<%=s.getId()%>"><%=st.getStatus()%> 
+									<option value="<%=st.getId()%>"><%=st.getStatus()%> 
 									</option>
 									<%
 									}
