@@ -257,6 +257,36 @@ public class BookingDao {
 	}  
         
 
+        public List<Booking> getBookingsByMechanicAndDateRange(int mechanicId, String startDate, String endDate) {
+    List<Booking> list = new ArrayList<Booking>();
+    
+    try {
+        String sql = "SELECT * FROM booking WHERE mecha_id = ? AND date BETWEEN ? AND ? ORDER BY date ASC";
+        PreparedStatement ps = conn.prepareStatement(sql);
+        ps.setInt(1, mechanicId);
+        ps.setString(2, startDate);
+        ps.setString(3, endDate);
+
+        ResultSet rs = ps.executeQuery();
+        while (rs.next()) {
+            Booking b = new Booking();
+            b.setId(rs.getInt(1));
+            b.setCusId(rs.getInt(2));
+            b.setVehiId(rs.getInt(3));
+            b.setDate(rs.getString(4));
+            b.setMechaId(rs.getInt(5));
+            b.setStatusId(rs.getInt(6));
+            b.setServiceId(rs.getInt(7));
+            b.setComment(rs.getString(8));
+
+            list.add(b);
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+
+    return list;
+}
 }
      
 

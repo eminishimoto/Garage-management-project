@@ -28,8 +28,8 @@
 	</c:if>
         
          <%@include file="navbar.jsp"%><!-- linked navbar.jsp file. paste to each module too-->
-        <h1>Mechanic Dashboard</h1>
         
+        <p class="text-center fs-3">Hello,${mechanicObj.fName}!</p>
         <%
 	Mechanic d = (Mechanic) session.getAttribute("mechanicObj");
 	MechanicDao dao = new MechanicDao(SQLconnect.getConn());
@@ -41,7 +41,7 @@
 					<div class="card-body text-center text-success">
 						<i class="fas fa-user-md fa-3x"></i><br>
 						<p class="fs-4 text-center">
-							Mechanic <br>12
+							Mechanic <br>
                                                        
 						</p>
 					</div>
@@ -50,17 +50,21 @@
 
 
 			<div class="col-md-4">
-				<div class="card paint-card">
+				<a href="assigned_booking.jsp" class="card paint-card"> 
 					<div class="card-body text-center text-success">
 						<i class="far fa-calendar-check fa-3x"></i><br>
 						<p class="fs-4 text-center">
-							Total Appointment <br>5
+						Assigned Booking <br>
 							
 						</p>
 					</div>
-				</div>
+				</a>
 			</div>
 
+                    
+                    
+                    
+                    
 		</div>
 	</div>
     </body>
