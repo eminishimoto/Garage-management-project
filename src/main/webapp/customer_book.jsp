@@ -43,8 +43,7 @@
             }
 
             .backImg {
-                background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
-                    url("img/garage.jpg");
+                background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4));
                 height: 20vh;
                 width: 100%;
                 background-size: cover;
@@ -60,10 +59,8 @@
         </div>
         <div class="container p-3">
             <div class="row">
-                <div class="col-md-6 p-5">
-                    <img alt="" src="img/doct.jpg">
-                </div>
-                
+
+
                 <div class="col-md-6">
                     <div class="card paint-card">
                         <div class="card-body">
@@ -89,42 +86,10 @@
                                         required type="text" name="customerid" class="form-control" value="${customerObj.fName }"readonly>
                                 </div>
 
-                                <!--                                                want to show customer data by customerid....
-                                                                                        <div class="col-md-6">
-                                                                                                <label for="inputEmail4" class="form-label">First Name</label> <input
-                                                                                                        required type="text" class="form-control" name="fname">
-                                                                                        </div>
-                                
-                                
-                                                                                        <div class="col-md-6">
-                                                                                                <label>Gender</label> <select class="form-control" name="gender"
-                                                                                                        required>
-                                                                                                        <option value="male">Male</option>
-                                                                                                        <option value="female">Female</option>
-                                                                                                </select>
-                                                                                        </div>
-                                
-                                                                                        <div class="col-md-6">
-                                                                                                <label for="inputEmail4" class="form-label">Age</label> <input
-                                                                                                        required type="number" class="form-control" name="age">
-                                                                                        </div>
-                                
-                                
-                                
-                                                                                        <div class="col-md-6">
-                                                                                                <label for="inputEmail4" class="form-label">Email</label> <input
-                                                                                                        required type="email" class="form-control" name="email">
-                                                                                        </div>
-                                
-                                                                                        <div class="col-md-6">
-                                                                                                <label for="inputEmail4" class="form-label">Phone No</label> <input
-                                                                                                        maxlength="10" required type="number" class="form-control"
-                                                                                                        name="phno">
-                                                                                        </div>-->
 
 
 
-                                 <!-- date -->
+                                <!-- date -->
                                 <div class="col-md-6">
                                     <label for="inputEmail6" class="form-label">Date</label> <input 
                                         type="date" required class="form-control" 
@@ -140,7 +105,7 @@
                                         <!-- select option from Vehicle entity-->
                                         <!--  instead it is vehicles now-->
                                         <%
-                                        // Use JSTL to get the customer ID from the customerObj attribute
+                                            // Use JSTL to get the customer ID from the customerObj attribute
                                             int cusId = (int) session.getAttribute("cusId");
 
                                             VehicleDao vdao = new VehicleDao(SQLconnect.getConn());
@@ -156,10 +121,8 @@
                                         <%
                                             }
                                         %>
-                                </select>
+                                    </select>
                                 </div>
-
-
 
                                 <!-- service type -->
                                 <div class="col-md-6">
@@ -204,228 +167,122 @@
 
         </div>
         <%@include file="component/footer.jsp"%>
-        
+
         <!-- JavaScript code placed at the bottom before  </body> tag -->
         <!-- not allow to select Sunday, coclor difference to be noticable-->
+
+        <!--<script>
+            // Get the date input field
+            var dateInput = document.getElementById("book_date");
         
-<!--<script>
-    // Get the date input field
-    var dateInput = document.getElementById("book_date");
+            // Add event listener to the date input field
+            dateInput.addEventListener("change", function() {
+                // Get the selected date
+                var selectedDate = new Date(this.value);
+                
+                // Check if the selected date is a Sunday (day number 0)
+                if (selectedDate.getDay() === 0) {
+                    // If it's a Sunday, reset the value of the input field
+                    this.value = "";
+                    // Optionally, you can show an alert or a message to inform the user that Sundays are not allowed
+                    alert("The store is CLOSED on Sundays. Please choose another date.");
+                }
+            });
+        </script>-->
 
-    // Add event listener to the date input field
-    dateInput.addEventListener("change", function() {
-        // Get the selected date
-        var selectedDate = new Date(this.value);
+        <!--<script>
+            // Get the date input field
+            var dateInput = document.getElementById("book_date");
         
-        // Check if the selected date is a Sunday (day number 0)
-        if (selectedDate.getDay() === 0) {
-            // If it's a Sunday, reset the value of the input field
-            this.value = "";
-            // Optionally, you can show an alert or a message to inform the user that Sundays are not allowed
-            alert("The store is CLOSED on Sundays. Please choose another date.");
-        }
-    });
-</script>-->
-
-<!--<script>
-    // Get the date input field
-    var dateInput = document.getElementById("book_date");
-
-    // Add event listener to the date input field
-    dateInput.addEventListener("change", function() {
-        // Get the selected date
-        var selectedDate = this.value;
+            // Add event listener to the date input field
+            dateInput.addEventListener("change", function() {
+                // Get the selected date
+                var selectedDate = this.value;
+                
+                // Check if the selected date is a Sunday (day number 0)
+                if (selectedDate.getDay() === 0) {
+                    this.value = "";
+                    alert("The store is CLOSED on Sundays. Please choose another date.");
+                } else {
         
-        // Check if the selected date is a Sunday (day number 0)
-        if (selectedDate.getDay() === 0) {
-            this.value = "";
-            alert("The store is CLOSED on Sundays. Please choose another date.");
-        } else {
-
-        // Make an AJAX request to CheckAvailabilityServlet
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "checkAvailability", true);
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.status === 200) {
-                    // Parse the response JSON
-                    var response = JSON.parse(xhr.responseText);
-                    var isFullyBooked = response.isFullyBooked;
-
-                    if (isFullyBooked) {
-                        // Show a message to the user indicating that the selected date is fully booked
-                        alert("Sorry, the selected date is fully booked. Please choose another date.");
-                        // Reset the date input field
-                        dateInput.value = "";
+                // Make an AJAX request to CheckAvailabilityServlet
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "checkAvailability", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status === 200) {
+                            // Parse the response JSON
+                            var response = JSON.parse(xhr.responseText);
+                            var isFullyBooked = response.isFullyBooked;
+        
+                            if (isFullyBooked) {
+                                // Show a message to the user indicating that the selected date is fully booked
+                                alert("Sorry, the selected date is fully booked. Please choose another date.");
+                                // Reset the date input field
+                                dateInput.value = "";
+                            }
+                        } else {
+                            // Handle AJAX request error
+                            console.error("Error checking availability: " + xhr.status);
+                        }
                     }
+                };
+        
+                // Send the selected date as a parameter to CheckAvailabilityServlet
+                xhr.send("selectedDate=" + encodeURIComponent(selectedDate));
+            });
+        </script>-->
+
+        <!--<script>
+            var dateInput = document.getElementById("book_date");
+        
+            dateInput.addEventListener("change", function() {
+                var selectedDate = new Date(this.value);
+        
+                // Check if the selected date is a Sunday (day number 0)
+                if (selectedDate.getDay() === 0) {
+                    this.value = "";
+                    alert("The store is CLOSED on Sundays. Please choose another date.");
                 } else {
-                    // Handle AJAX request error
-                    console.error("Error checking availability: " + xhr.status);
+                    // Make an AJAX request to the server to check if the date is fully booked
+                    var xhr = new XMLHttpRequest();
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState === 4 && xhr.status === 200) {
+                            var response = xhr.responseText;
+                            if (response === "fully_booked") {
+                                this.value = "";
+                                alert("Sorry, the selected date is fully booked. Please choose another date.");
+                            }
+                        }
+                    };
+                    xhr.open("GET", "check_booking_status.jsp?date=" + this.value, true);
+                    xhr.send();
                 }
-            }
-        };
+            });
+        </script>-->
 
-        // Send the selected date as a parameter to CheckAvailabilityServlet
-        xhr.send("selectedDate=" + encodeURIComponent(selectedDate));
-    });
-</script>-->
-
-<!--<script>
-    var dateInput = document.getElementById("book_date");
-
-    dateInput.addEventListener("change", function() {
-        var selectedDate = new Date(this.value);
-
-        // Check if the selected date is a Sunday (day number 0)
-        if (selectedDate.getDay() === 0) {
-            this.value = "";
-            alert("The store is CLOSED on Sundays. Please choose another date.");
-        } else {
-            // Make an AJAX request to the server to check if the date is fully booked
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    var response = xhr.responseText;
-                    if (response === "fully_booked") {
-                        this.value = "";
-                        alert("Sorry, the selected date is fully booked. Please choose another date.");
-                    }
-                }
-            };
-            xhr.open("GET", "check_booking_status.jsp?date=" + this.value, true);
-            xhr.send();
-        }
-    });
-</script>-->
-
-<!--<script>
-// Get the date input field
-var dateInput = document.getElementById("book_date");
-// Get the element to show the booking status message
-var bookingStatusMessage = document.getElementById("bookingStatusMessage");
-
-// Add event listener to the date input field
-dateInput.addEventListener("change", function() {
-    // Get the selected date
-    var selectedDate = new Date(this.value);
-
-    // Check if the selected date is a Sunday (day number 0)
-    if (selectedDate.getDay() === 0) {
-        this.value = ""; // Reset the value of the input field
-        alert("The store is CLOSED on Sundays. Please choose another date.");
-        return; // Exit the function to prevent further processing
-    }
-
-    // Make an AJAX request to CheckAvailabilityServlet
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "/checkAvailability", true); // Update the AJAX request URL to match the servlet URL
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                // Parse the response JSON
-                var response = JSON.parse(xhr.responseText);
-                var isFullyBooked = response.isFullyBooked;
-
-                if (isFullyBooked) {
-                    // Show a message to the user indicating that the selected date is fully booked
-                    bookingStatusMessage.textContent = "Sorry, the selected date is fully booked. Please choose another date.";
-                    // Reset the date input field
-                    dateInput.value = "";
-                } else {
-                    // Clear the booking status message if the selected date is available
-                    bookingStatusMessage.textContent = "";
-                }
-            } else {
-                // Handle AJAX request error
-                console.error("Error checking availability: " + xhr.status);
-            }
-        }
-    };
-
-    // Send the selected date as a parameter to CheckAvailabilityServlet
-    xhr.send("selectedDate=" + encodeURIComponent(selectedDate.toISOString()));
-});
-
-
-
-</script>-->
-
-<script>
-    // Get the date input field
-    var dateInput = document.getElementById("book_date");
-
-    // Add event listener to the date input field
-    dateInput.addEventListener("change", function() {
-        // Get the selected date
-        var selectedDate = this.value;
-
-        // Make an AJAX request to CheckDateAvailability
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "checkAvailability", true);
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.status === 200) {
-                    // Parse the response JSON
-                    var response = JSON.parse(xhr.responseText);
-                    var isFullyBooked = response.isFullyBooked;
-
-                    if (isFullyBooked) {
-                        // Show a message to the user indicating that the selected date is fully booked
-                        alert("Sorry, the selected date is fully booked. Please choose another date.");
-                        // Reset the date input field
-                        dateInput.value = "";
-                    }
-                } else {
-                    // Handle AJAX request error
-                    console.error("Error checking availability: " + xhr.status);
-                }
-            }
-        };
-
-        // Send the selected date as a parameter to CheckAvailabilityServlet
-        xhr.send("selectedDate=" + encodeURIComponent(selectedDate));
-    });
-</script>
-<!DOCTYPE html>
-<html>
-<head>
-    <!-- Your head content goes here -->
-</head>
-<body>
-    <%-- Your existing HTML content goes here --%>
-
-    <!-- Add a new element to show the booking status message -->
-    <div id="bookingStatusMessage"></div>
-
-    <%-- Your existing HTML content continues here --%>
-
-    <%-- Your JavaScript code goes here --%>
-    <script>
+        <!--<script>
         // Get the date input field
         var dateInput = document.getElementById("book_date");
         // Get the element to show the booking status message
         var bookingStatusMessage = document.getElementById("bookingStatusMessage");
-
+        
         // Add event listener to the date input field
         dateInput.addEventListener("change", function() {
             // Get the selected date
             var selectedDate = new Date(this.value);
-
+        
             // Check if the selected date is a Sunday (day number 0)
             if (selectedDate.getDay() === 0) {
-                // If it's a Sunday, reset the value of the input field
-                this.value = "";
-                // Optionally, you can show an alert or a message to inform the user that Sundays are not allowed
+                this.value = ""; // Reset the value of the input field
                 alert("The store is CLOSED on Sundays. Please choose another date.");
                 return; // Exit the function to prevent further processing
             }
-
+        
             // Make an AJAX request to CheckAvailabilityServlet
             var xhr = new XMLHttpRequest();
-            xhr.open("POST", "checkAvailability", true); // Update the AJAX request URL to match the servlet URL
+            xhr.open("POST", "/checkAvailability", true); // Update the AJAX request URL to match the servlet URL
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -433,7 +290,7 @@ dateInput.addEventListener("change", function() {
                         // Parse the response JSON
                         var response = JSON.parse(xhr.responseText);
                         var isFullyBooked = response.isFullyBooked;
-
+        
                         if (isFullyBooked) {
                             // Show a message to the user indicating that the selected date is fully booked
                             bookingStatusMessage.textContent = "Sorry, the selected date is fully booked. Please choose another date.";
@@ -449,13 +306,119 @@ dateInput.addEventListener("change", function() {
                     }
                 }
             };
-
+        
             // Send the selected date as a parameter to CheckAvailabilityServlet
             xhr.send("selectedDate=" + encodeURIComponent(selectedDate.toISOString()));
         });
-    </script>
+        
+        
+        
+        </script>-->
+
+        <script>
+            // Get the date input field
+            var dateInput = document.getElementById("book_date");
+
+            // Add event listener to the date input field
+            dateInput.addEventListener("change", function () {
+                // Get the selected date
+                var selectedDate = this.value;
+
+                // Make an AJAX request to CheckDateAvailability
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "checkAvailability", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status === 200) {
+                            // Parse the response JSON
+                            var response = JSON.parse(xhr.responseText);
+                            var isFullyBooked = response.isFullyBooked;
+
+                            if (isFullyBooked) {
+                                // Show a message to the user indicating that the selected date is fully booked
+                                alert("Sorry, the selected date is fully booked. Please choose another date.");
+                                // Reset the date input field
+                                dateInput.value = "";
+                            }
+                        } else {
+                            // Handle AJAX request error
+                            console.error("Error checking availability: " + xhr.status);
+                        }
+                    }
+                };
+
+                // Send the selected date as a parameter to CheckAvailabilityServlet
+                xhr.send("selectedDate=" + encodeURIComponent(selectedDate));
+            });
+        </script>
+        <!DOCTYPE html>
+    <html>
+        <head>
+            <!-- Your head content goes here -->
+        </head>
+        <body>
+            <%-- Your existing HTML content goes here --%>
+
+            <!-- Add a new element to show the booking status message -->
+            <div id="bookingStatusMessage"></div>
+
+            <%-- Your existing HTML content continues here --%>
+
+            <%-- Your JavaScript code goes here --%>
+            <script>
+                // Get the date input field
+                var dateInput = document.getElementById("book_date");
+                // Get the element to show the booking status message
+                var bookingStatusMessage = document.getElementById("bookingStatusMessage");
+
+                // Add event listener to the date input field
+                dateInput.addEventListener("change", function () {
+                    // Get the selected date
+                    var selectedDate = new Date(this.value);
+
+                    // Check if the selected date is a Sunday (day number 0)
+                    if (selectedDate.getDay() === 0) {
+                        // If it's a Sunday, reset the value of the input field
+                        this.value = "";
+                        // Optionally, you can show an alert or a message to inform the user that Sundays are not allowed
+                        alert("The store is CLOSED on Sundays. Please choose another date.");
+                        return; // Exit the function to prevent further processing
+                    }
+
+                    // Make an AJAX request to CheckAvailabilityServlet
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", "checkAvailability", true); // Update the AJAX request URL to match the servlet URL
+                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState === XMLHttpRequest.DONE) {
+                            if (xhr.status === 200) {
+                                // Parse the response JSON
+                                var response = JSON.parse(xhr.responseText);
+                                var isFullyBooked = response.isFullyBooked;
+
+                                if (isFullyBooked) {
+                                    // Show a message to the user indicating that the selected date is fully booked
+                                    bookingStatusMessage.textContent = "Sorry, the selected date is fully booked. Please choose another date.";
+                                    // Reset the date input field
+                                    dateInput.value = "";
+                                } else {
+                                    // Clear the booking status message if the selected date is available
+                                    bookingStatusMessage.textContent = "";
+                                }
+                            } else {
+                                // Handle AJAX request error
+                                console.error("Error checking availability: " + xhr.status);
+                            }
+                        }
+                    };
+
+                    // Send the selected date as a parameter to CheckAvailabilityServlet
+                    xhr.send("selectedDate=" + encodeURIComponent(selectedDate.toISOString()));
+                });
+            </script>
 
 
-    </body>
-</html>
+        </body>
+    </html>
 
