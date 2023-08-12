@@ -15,40 +15,40 @@
         <title>Index Page</title>
         <%@include file="component/allcss.jsp"%><!<!-- linked allcss.jsp file -->
 
-   
-
-
-  
-    <style type="text/css">
-        .paint-card {
-            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-        }
-
-        /* Update the CSS for the welcome message container */
-        .welcome-message-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 80vh; /* Adjust the height for better proportion */
-            background-image: url('path_to_your_background_image.jpg'); /* Add a background image */
-            background-size: cover; /* Cover the entire container */
-            background-position: center; /* Center the background image */
-            padding: 0 20px; /* Add horizontal padding */
-            color: #fff; /* Set text color to white */
-            text-align: center;
-        }
 
 
 
-        /* Add this style for the footer */
-        .sticky-footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        
 
-    </style>
+        <style type="text/css">
+            .paint-card {
+                box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+            }
+
+            /* Update the CSS for the welcome message container */
+            .welcome-message-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 80vh; /* Adjust the height for better proportion */
+                background-image: url('path_to_your_background_image.jpg'); /* Add a background image */
+                background-size: cover; /* Cover the entire container */
+                background-position: center; /* Center the background image */
+                padding: 0 20px; /* Add horizontal padding */
+                color: #fff; /* Set text color to white */
+                text-align: center;
+            }
+
+
+
+            /* Add this style for the footer */
+            .sticky-footer {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+            }
+
+
+        </style>
 
 
 
@@ -150,41 +150,41 @@
                             <div class="col-md-3">
                                 <div class="card paint-card">
                                     <div class="card-body text-center">
-                                       
+
                                         <p class="fw-bold fs-5">Annual Service</p>
                                         <p class="fs-7">(200€ ~)</p>
                                     </div>
                                 </div>
                             </div>
-                            
-                                                        <div class="col-md-3">
+
+                            <div class="col-md-3">
                                 <div class="card paint-card">
                                     <div class="card-body text-center">
-                                       
+
                                         <p class="fw-bold fs-5">Major Service</p>
                                         <p class="fs-7">(150€ ~)</p>
                                     </div>
                                 </div>
                             </div>
 
-                                                                                    <div class="col-md-3">
+                            <div class="col-md-3">
                                 <div class="card paint-card">
                                     <div class="card-body text-center">
-                                       
+
                                         <p class="fw-bold fs-5">Repair/Fault</p>
                                         <p class="fs-7">(250€ ~)</p>
                                     </div>
                                 </div>
                             </div>
-                                                                                                                <div class="col-md-3">
+                            <div class="col-md-3">
                                 <div class="card paint-card">
                                     <div class="card-body text-center">
-                                       
+
                                         <p class="fw-bold fs-5">Major Repair</p>
                                         <p class="fs-7">(300€ ~)</p>
                                     </div>
                                 </div>
-                                                                                                                                                                                                    
+
                             </div>
 
 
@@ -193,13 +193,13 @@
 
 
                         </div>
-                          <hr>
-<!--                                                         <h1 class="card-title text-center">We have store variety of items.</h1>-->
-                                <p class="card-text text-center">Contact us </p> 
-                               
-                                <p class="card-text text-center">TEL:083-XXX-XXXX</p> 
-                                <p class="card-text text-center">Email:customerservice@gersgarage.com</p> 
-                                <p class="card-text text-center">Address:Gersgarage st, Dublin</p> 
+                        <hr>
+                        <!--                                                         <h1 class="card-title text-center">We have store variety of items.</h1>-->
+                        <p class="card-text text-center">Contact us </p> 
+
+                        <p class="card-text text-center">TEL:083-XXX-XXXX</p> 
+                        <p class="card-text text-center">Email:customerservice@gersgarage.com</p> 
+                        <p class="card-text text-center">Address:Gersgarage st, Dublin</p> 
                     </div>
                 </div>
             </div>

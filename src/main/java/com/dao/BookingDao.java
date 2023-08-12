@@ -191,7 +191,7 @@ public class BookingDao {
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 int count = rs.getInt(1);
-                return count >= 1; // Replace MAX_CAPACITY with the maximum number of bookings allowed for a date
+                return count >= 5; // Replace MAX_CAPACITY with the maximum number of bookings allowed for a date
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -256,7 +256,7 @@ public class BookingDao {
 		return list;
 	}  
         
-
+     //mechanic can check assigned booking list
         public List<Booking> getBookingsByMechanicAndDateRange(int mechanicId, String startDate, String endDate) {
     List<Booking> list = new ArrayList<Booking>();
     
